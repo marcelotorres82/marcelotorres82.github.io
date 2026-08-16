@@ -1,524 +1,136 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark" class="dark scroll-smooth">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Marcelo Torres, desenvolvedor Full Stack. Projetos web, automações e produtos digitais.">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Marcelo Torres — Full Stack Developer">
+  <meta property="og:description" content="Produtos digitais com foco em clareza, performance e resultado.">
+  <meta property="og:image" content="assets/projects/prospect-radar.png">
   <title>Marcelo Torres — Full Stack Developer</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Portfolio of Marcelo Torres — Full Stack Developer. Python, Tailwind, Vue, Streamlit and more." />
-  <link rel="canonical" href="https://marcelotorres1982.github.io/" />
-  <meta name="theme-color" content="#0b0f14" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Marcelo Torres — Full Stack Developer" />
-  <meta property="og:description" content="Portfolio, projects and certifications." />
-  <meta property="og:image" content="img/foto.png" />
-  <meta property="og:url" content="https://marcelotorres1982.github.io/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind (CDN) -->
-  <script>
-    window.tailwind = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'ui-sans-serif', 'system-ui'] },
-          colors: { primary: { DEFAULT: '#2563eb', dark: '#1d4ed8' } }
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    :root { color-scheme: dark; }
-    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    .fade-in { opacity:0; transform:translateY(14px); transition:opacity .6s, transform .6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  { "@context":"https://schema.org", "@type":"Person",
-    "name":"Marcelo Torres", "jobTitle":"Full Stack Developer",
-    "image":"img/foto.png", "url":"https://marcelotorres1982.github.io/",
-    "sameAs":[ "https://github.com/marcelotorres1982", "https://www.linkedin.com/in/marcelo-t-developer/" ] }
-  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2311130f'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial' font-size='18' font-weight='700' fill='%23c7ff42'%3EMT%3C/text%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+  <script defer src="scripts/main.js"></script>
 </head>
-<body class="bg-zinc-950 text-zinc-100">
-  <a href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-primary focus:text-white focus:px-3 focus:py-1.5 focus:rounded-md">Skip to content</a>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
-  <header id="topbar" class="fixed inset-x-0 top-0 z-50 bg-zinc-900/90 border-b border-zinc-800 backdrop-blur">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Primary">
-      <a href="#home" class="font-extrabold text-primary">Marcelo Torres</a>
-
-      <button id="menuBtn" class="md:hidden w-10 h-10 grid place-items-center rounded-md border border-zinc-700">☰</button>
-
-      <ul class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <li><a href="#home" class="hover:text-primary">Home</a></li>
-        <li><a href="#about" class="hover:text-primary">About</a></li>
-        <li><a href="#skills" class="hover:text-primary">Skills</a></li>
-        <li><a href="#projects" class="hover:text-primary">Projects</a></li>
-        <li><a href="#certifications" class="hover:text-primary">Certifications</a></li>
-        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
-        <li>
-          <a href="resume.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-primary text-primary hover:bg-primary hover:text-white transition">
-            📄 Resume
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-zinc-800 bg-zinc-900/95 backdrop-blur">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-3 text-sm font-semibold">
-        <a href="#home" class="hover:text-primary">Home</a>
-        <a href="#about" class="hover:text-primary">About</a>
-        <a href="#skills" class="hover:text-primary">Skills</a>
-        <a href="#projects" class="hover:text-primary">Projects</a>
-        <a href="#certifications" class="hover:text-primary">Certifications</a>
-        <a href="#contact" class="hover:text-primary">Contact</a>
-        <a href="resume.html" class="hover:text-primary">Resume</a>
-      </div>
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio" aria-label="Marcelo Torres, início">
+        <span class="brand-mark" aria-hidden="true">MT</span>
+        <span>Marcelo Torres</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+        <span class="sr-only">Abrir menu</span><span></span><span></span>
+      </button>
+      <nav class="nav" id="main-nav" aria-label="Navegação principal" data-nav>
+        <a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+        <a class="nav-cta" href="https://github.com/marcelotorres82" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
   </header>
 
-  <main class="pt-24" id="home">
-    <!-- HERO -->
-    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
-      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 to-primary">
-        Full Stack Developer
-      </h1>
-      <p class="mt-4 text-zinc-300 max-w-2xl mx-auto">
-        Passionate about turning ideas into code. Simple, functional interfaces with personality.
-      </p>
-      <div class="mt-6 flex items-center justify-center gap-3">
-        <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-white font-semibold shadow hover:bg-primary-dark transition">
-          View Projects
-        </a>
-        <a href="resume.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-zinc-700 font-semibold hover:bg-zinc-800 transition">
-          📄 Resume
-        </a>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-orb hero-orb-one" aria-hidden="true"></div><div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="shell hero-content">
+        <div class="availability reveal"><span class="availability-dot"></span>Disponível para novos projetos</div>
+        <h1 class="reveal">Eu transformo ideias em <span class="accent-title">produtos digitais.</span></h1>
+        <p class="hero-copy reveal">Desenvolvedor Full Stack de Porto Alegre. Construo aplicações web claras, confiáveis e prontas para resolver problemas reais.</p>
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="#projetos">Explorar projetos <span class="button-icon" aria-hidden="true">↓</span></a>
+          <a class="text-link" href="mailto:marcelotorres1982@gmail.com">Vamos conversar <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-foot reveal" aria-label="Tecnologias principais"><span>React</span><span>Next.js</span><span>TypeScript</span><span>Python</span><span>PostgreSQL</span></div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <div class="bg-zinc-900/40 rounded-2xl border border-zinc-800 p-6 sm:p-8">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="h-72 rounded-2xl overflow-hidden border border-zinc-800">
-            <img src="img/foto.png" alt="Marcelo Torres" class="w-full h-full object-cover object-top" loading="lazy">
-          </div>
-          <div>
-            <h2 class="text-2xl font-extrabold mb-4">About Me</h2>
-            <p class="text-zinc-300 mb-3">
-              Hi! I'm Marcelo Torres, a Systems Analysis and Development graduate passionate about technology and programming.
-            </p>
-            <p class="text-zinc-300 mb-3">
-              I'm currently focused on HTML, CSS, JavaScript, Python, Machine Learning and MySQL—building projects to strengthen front-end and back-end fundamentals.
-            </p>
-            <p class="text-zinc-300">
-              I love learning by doing, facing challenges and constantly evolving. Here I share my journey and projects.
-            </p>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track">
+      <span>DESENVOLVIMENTO WEB</span><i>✦</i><span>AUTOMAÇÃO</span><i>✦</i><span>INTELIGÊNCIA ARTIFICIAL</span><i>✦</i>
+      <span>DESENVOLVIMENTO WEB</span><i>✦</i><span>AUTOMAÇÃO</span><i>✦</i><span>INTELIGÊNCIA ARTIFICIAL</span><i>✦</i>
+    </div></div>
+
+    <section class="projects section" id="projetos">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Trabalhos selecionados</p><h2>Projetos em destaque</h2></div>
+          <p>Uma seleção de produtos que unem estratégia, código e atenção aos detalhes.</p>
+        </div>
+        <div class="project-list">
+          <article class="project project-featured reveal">
+            <a class="project-media" href="https://prospect-radar-mu.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Abrir Prospect Radar">
+              <img src="assets/projects/prospect-radar.png" alt="Tela de acesso do Prospect Radar" width="1440" height="900"><span class="media-action" aria-hidden="true">↗</span>
+            </a>
+            <div class="project-content"><div class="project-number">01</div><div>
+              <p class="project-label">Plataforma B2B · Projeto principal</p><h3>Prospect Radar</h3>
+              <p>Pesquisa, qualificação e priorização de empresas para tornar a prospecção comercial mais inteligente e objetiva.</p>
+              <ul class="tags" aria-label="Tecnologias"><li>Next.js</li><li>TypeScript</li><li>React</li><li>Neon</li><li>Drizzle</li></ul>
+              <div class="project-links"><a href="https://prospect-radar-mu.vercel.app" target="_blank" rel="noopener noreferrer">Abrir aplicação <span aria-hidden="true">↗</span></a><a href="https://github.com/marcelotorres82/AutoLead" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a></div>
+            </div></div>
+          </article>
+
+          <div class="project-grid">
+            <article class="project project-card reveal">
+              <a class="project-media" href="https://liquid-ledger-craft.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Abrir Liquid Ledger">
+                <img src="assets/projects/liquid-ledger.png" alt="Tela de acesso do aplicativo financeiro Liquid Ledger" width="1440" height="900" loading="lazy"><span class="media-action" aria-hidden="true">↗</span>
+              </a>
+              <div class="project-content"><div class="project-number">02</div><div>
+                <p class="project-label">Finanças pessoais</p><h3>Liquid Ledger</h3><p>Experiência web para organizar e visualizar a vida financeira com simplicidade.</p>
+                <ul class="tags" aria-label="Tecnologias"><li>JavaScript</li><li>Web App</li><li>Vercel</li></ul>
+                <div class="project-links"><a href="https://liquid-ledger-craft.vercel.app" target="_blank" rel="noopener noreferrer">Abrir aplicação <span aria-hidden="true">↗</span></a><a href="https://github.com/marcelotorres82/liquid-ledger-craft" target="_blank" rel="noopener noreferrer">Código <span aria-hidden="true">↗</span></a></div>
+              </div></div>
+            </article>
+
+            <article class="project project-card reveal">
+              <a class="project-media" href="https://matbelnutrition.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Abrir Matbel Nutrition">
+                <img src="assets/projects/matbel-nutrition.png" alt="Calculadora esportiva Matbel Nutrition" width="1440" height="900" loading="lazy"><span class="media-action" aria-hidden="true">↗</span>
+              </a>
+              <div class="project-content"><div class="project-number">03</div><div>
+                <p class="project-label">Saúde e performance</p><h3>Matbel Nutrition</h3><p>Calculadora de IMC que considera o contexto esportivo em uma interface direta e responsiva.</p>
+                <ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                <div class="project-links"><a href="https://matbelnutrition.vercel.app" target="_blank" rel="noopener noreferrer">Abrir aplicação <span aria-hidden="true">↗</span></a><a href="https://github.com/marcelotorres82/matbelnutrition" target="_blank" rel="noopener noreferrer">Código <span aria-hidden="true">↗</span></a></div>
+              </div></div>
+            </article>
+
+            <article class="project project-card project-wide reveal">
+              <a class="project-media" href="https://consultacnpj-cdavsorkdb85j6tvyaxmdz.streamlit.app" target="_blank" rel="noopener noreferrer" aria-label="Abrir Consulta CNPJ">
+                <img src="assets/projects/consulta-cnpj.png" alt="Interface da aplicação Consulta CNPJ" width="1900" height="909" loading="lazy"><span class="media-action" aria-hidden="true">↗</span>
+              </a>
+              <div class="project-content"><div class="project-number">04</div><div>
+                <p class="project-label">Dados empresariais</p><h3>Consulta CNPJ</h3><p>Consulta consolidada de informações de empresas brasileiras com fallback entre múltiplas APIs públicas.</p>
+                <ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Streamlit</li><li>APIs públicas</li></ul>
+                <div class="project-links"><a href="https://consultacnpj-cdavsorkdb85j6tvyaxmdz.streamlit.app" target="_blank" rel="noopener noreferrer">Abrir aplicação <span aria-hidden="true">↗</span></a><a href="https://github.com/marcelotorres82/consulta_cnpj" target="_blank" rel="noopener noreferrer">Código <span aria-hidden="true">↗</span></a></div>
+              </div></div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-2xl font-extrabold mb-8 text-center">Skills</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🌐</div>
-          <h3 class="text-lg font-bold mb-2">HTML & CSS</h3>
-          <p class="text-zinc-400 text-sm">Responsive layouts (Flexbox/Grid), animations and a11y.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">⚡</div>
-          <h3 class="text-lg font-bold mb-2">JavaScript</h3>
-          <p class="text-zinc-400 text-sm">Interactivity, DOM and REST API integration.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🎨</div>
-          <h3 class="text-lg font-bold mb-2">Tailwind CSS + Vue</h3>
-          <p class="text-zinc-400 text-sm">Modern UI, reactive components and SPA/MPA pages.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🐍</div>
-          <h3 class="text-lg font-bold mb-2">Python</h3>
-          <p class="text-zinc-400 text-sm">APIs, automations and web apps (Streamlit/Flask/Django).</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🗄️</div>
-          <h3 class="text-lg font-bold mb-2">SQL</h3>
-          <p class="text-zinc-400 text-sm">Modeling, queries and app integration.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🧠</div>
-          <h3 class="text-lg font-bold mb-2">AI & Machine Learning</h3>
-          <p class="text-zinc-400 text-sm">NumPy, scikit-learn, preprocessing and evaluation.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">⚙️</div>
-          <h3 class="text-lg font-bold mb-2">Django</h3>
-          <p class="text-zinc-400 text-sm">MVC, ORM, admin and auth.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🚀</div>
-          <h3 class="text-lg font-bold mb-2">Flask</h3>
-          <p class="text-zinc-400 text-sm">Lightweight RESTful APIs and services.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">📊</div>
-          <h3 class="text-lg font-bold mb-2">Streamlit</h3>
-          <p class="text-zinc-400 text-sm">Fast data dashboards and prototypes.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">📦</div>
-          <h3 class="text-lg font-bold mb-2">NumPy</h3>
-          <p class="text-zinc-400 text-sm">Vectorization and numerical computing.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🧪</div>
-          <h3 class="text-lg font-bold mb-2">scikit-learn</h3>
-          <p class="text-zinc-400 text-sm">Classical ML models, pipelines and metrics.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🐙</div>
-          <h3 class="text-lg font-bold mb-2">Git & GitHub</h3>
-          <p class="text-zinc-400 text-sm">Versioning flows and collaboration.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🐳</div>
-          <h3 class="text-lg font-bold mb-2">Docker</h3>
-          <p class="text-zinc-400 text-sm">Reproducible dev environments and containerized deploys.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">☁️</div>
-          <h3 class="text-lg font-bold mb-2">AWS</h3>
-          <p class="text-zinc-400 text-sm">Cloud hosting, storage and serverless workloads.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🤖</div>
-          <h3 class="text-lg font-bold mb-2">GitHub Actions</h3>
-          <p class="text-zinc-400 text-sm">CI/CD automations for testing and deployments.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🌀</div>
-          <h3 class="text-lg font-bold mb-2">Next.js</h3>
-          <p class="text-zinc-400 text-sm">App Router, server actions and optimized SSR.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">💎</div>
-          <h3 class="text-lg font-bold mb-2">Prisma</h3>
-          <p class="text-zinc-400 text-sm">Type-safe ORM, migrations and data modeling.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🐘</div>
-          <h3 class="text-lg font-bold mb-2">PostgreSQL</h3>
-          <p class="text-zinc-400 text-sm">Relational design, views and optimized queries.</p>
-        </div>
-
-        <div class="bg-zinc-900/40 rounded-xl border border-zinc-800 p-6">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-2xl mb-4">🧩</div>
-          <h3 class="text-lg font-bold mb-2">Figma</h3>
-          <p class="text-zinc-400 text-sm">UI prototyping, handoff specs and design systems.</p>
-        </div>
-
+    <section class="about section" id="sobre"><div class="shell about-grid">
+      <div class="about-title reveal"><p class="eyebrow">Sobre mim</p><h2>Tecnologia boa é a que faz sentido para quem usa.</h2></div>
+      <div class="about-copy reveal">
+        <p>Sou desenvolvedor Full Stack, de Porto Alegre, e gosto de transformar problemas de negócio em experiências digitais simples, úteis e bem construídas.</p>
+        <p>Atuo do front-end ao banco de dados, combinando desenvolvimento web, automações e inteligência artificial para entregar produtos que realmente funcionam.</p>
+        <div class="stats" aria-label="Resumo profissional"><div><strong>Full Stack</strong><span>Produto de ponta a ponta</span></div><div><strong>Web + IA</strong><span>Soluções inteligentes</span></div><div><strong>Porto Alegre</strong><span>RS · Brasil</span></div></div>
       </div>
-    </section>
+    </div></section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-2xl font-extrabold mb-8 text-center">Projects</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-
-        <!-- Project 1 -->
-        <article class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition fade-in">
-          <a href="https://pdv-control.streamlit.app/" target="_blank" rel="noopener">
-            <div class="h-40 bg-zinc-800 overflow-hidden">
-              <img src="img/projeto4.png" alt="PDV Control" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
-            </div>
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">📍 PDV Control — Check-in Management</h3>
-            <p class="text-zinc-300 mb-4">Check-in management with geolocation, photo upload and Google Sheets sync. 100% cloud.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Python</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Streamlit</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Google APIs</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">OAuth2</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="https://pdv-control.streamlit.app/" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Demo →</a>
-              <a href="https://github.com/marcelotorres1982/pdv-control" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Code →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition fade-in">
-          <a href="https://barbervibe-gx9zz9o4zf73dwycappcvcz.streamlit.app/" target="_blank" rel="noopener">
-            <div class="h-40 bg-zinc-800 overflow-hidden">
-              <img src="img/projeto1.png" alt="BarberVibe" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
-            </div>
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">💈 BarberVibe — Scheduling System</h3>
-            <p class="text-zinc-300 mb-4">Full barbershop scheduling with intuitive UX focused on real problem-solving.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Python</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Streamlit</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="https://barbervibe-gx9zz9o4zf73dwycappcvcz.streamlit.app/" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Demo →</a>
-              <a href="https://github.com/marcelotorres1982/barbervibe" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Code →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition fade-in">
-          <a href="https://consultacnpj-cdavsorkdb85j6tvyaxmdz.streamlit.app/" target="_blank" rel="noopener">
-            <div class="h-40 bg-zinc-800 overflow-hidden">
-              <img src="img/projeto2.png" alt="CNPJ Lookup" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
-            </div>
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">📊 CNPJ Lookup</h3>
-            <p class="text-zinc-300 mb-4">Robust app for company info via CNPJ using multiple official Brazilian APIs.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Python</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Streamlit</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">APIs</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="https://consultacnpj-cdavsorkdb85j6tvyaxmdz.streamlit.app/" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Demo →</a>
-              <a href="https://github.com/marcelotorres1982/consulta_cnpj" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Code →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition fade-in">
-          <a href="https://github.com/marcelotorres1982/beginner-python-projects" target="_blank" rel="noopener">
-            <div class="h-40 bg-zinc-800 overflow-hidden">
-              <img src="img/projeto3.png" alt="Beginner Python Projects" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" loading="lazy">
-            </div>
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">🐍 Beginner Python Projects</h3>
-            <p class="text-zinc-300 mb-4">Small, practical and fun projects for Python beginners.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">Python</span>
-              <span class="px-3 py-1 text-xs font-semibold bg-zinc-800 rounded-full border border-zinc-700">JSON</span>
-            </div>
-            <div class="flex gap-3">
-              <a href="https://github.com/marcelotorres1982/beginner-python-projects" target="_blank" rel="noopener" class="text-primary hover:underline font-semibold text-sm">Code →</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-2xl font-extrabold mb-8 text-center">Certifications</h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/SaaS Next.js@FullStackClub.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/SaaS Next.js@FullStackClub.jpg" alt="Saas Nextjs @FullStack Club" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Saas Nextjs @FullStack Club</p>
-          </div>
-        </a>
-        
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/ai@dell.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/ai@dell.jpg" alt="AI @ DELL" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">AI @ DELL</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/ai@dell_agentic_ai.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/ai@dell_agentic_ai.jpg" alt="AI @ DELL: Agentic AI" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">AI: Agentic AI @ DELL</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/android_dev@uniasselvi.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/android_dev@uniasselvi.jpg" alt="Android Development @ UNIASSELVI" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Android Development @ UNIASSELVI</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/aplicacoes_ia@dio.png" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/aplicacoes_ia@dio.png" alt="Aplicações IA @ DIO" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Aplicações IA @ DIO</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/chatbot_python@asimov.png" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/chatbot_python@asimov.png" alt="Python para IA: Do zero ao chatbot @ ASIMOV" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Python para IA: Do zero ao chatbot @ ASIMOV</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/dell_nextgen@dell.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/dell_nextgen@dell.jpg" alt="Dell NextGen @ DELL class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Dell NextGen @ DELL</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/ia@uniasselvi.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/ia@uniasselvi.jpg" alt="IA @ UNIASSELVI" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">IA @ UNIASSELVI</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/ia_generativa@dio.png" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/ia_generativa@dio.png" alt="IA Generativa @ DIO" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">IA Generativa @ DIO</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/js_advanced@devsamurai.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/js_advanced@devsamurai.jpg" alt="Advanced JavaScript @ DEVSAMURAI" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Advanced JavaScript @ DEVSAMURAI</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/logica_python@udemy.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/logica_python@udemy.jpg" alt="Programming Logic @ Udemy" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Programming Logic @ Udemy</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/python_cmpleto@academify.png" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/python_cmpleto@academify.png" alt="Python Full Course @ ACADEMIFY" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Python Full Course @ ACADEMIFY</p>
-          </div>
-        </a>
-
-        <a class="bg-zinc-900/40 rounded-xl border border-zinc-800 overflow-hidden hover:border-zinc-700 transition group"
-           href="certificados/typescript@devsamurai.jpg" target="_blank" rel="noopener">
-          <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center">
-            <img src="certificados/typescript@devsamurai.jpg" alt="Typescript @ DEVSAMURAI" class="max-h-full max-w-full object-contain group-hover:scale-[1.02] transition" loading="lazy">
-          </div>
-          <div class="px-4 py-3">
-            <p class="text-sm font-semibold truncate">Typescript @ DEVSAMURAI</p>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <div class="bg-zinc-900/40 rounded-2xl border border-zinc-800 p-8 sm:p-12 text-center">
-        <h2 class="text-2xl font-extrabold mb-3">Let's talk?</h2>
-        <p class="text-zinc-300 mb-8">Open to new opportunities, interesting projects and great tech ideas.</p>
-        <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-3 max-w-4xl mx-auto">
-          <a href="mailto:marcelotorres1982@gmail.com" class="px-4 py-3 rounded-lg border border-zinc-700 font-semibold hover:bg-zinc-800 transition">📧 Email</a>
-          <a href="https://www.linkedin.com/in/marcelo-t-developer" target="_blank" rel="noopener" class="px-4 py-3 rounded-lg border border-zinc-700 font-semibold hover:bg-zinc-800 transition">💼 LinkedIn</a>
-          <a href="https://github.com/marcelotorres1982" target="_blank" rel="noopener" class="px-4 py-3 rounded-lg border border-zinc-700 font-semibold hover:bg-zinc-800 transition">🐙 GitHub</a>
-          <a href="resume.html" class="px-4 py-3 rounded-lg border border-zinc-700 font-semibold hover:bg-zinc-800 transition">📱 Resume</a>
-          <a href="#certifications" class="px-4 py-3 rounded-lg border border-zinc-700 font-semibold hover:bg-zinc-800 transition">🏆 Certifications</a>
-        </div>
-      </div>
-    </section>
+    <section class="contact section" id="contato"><div class="shell contact-card reveal">
+      <p class="eyebrow">Tem uma ideia?</p><h2>Vamos construir algo <em>relevante.</em></h2>
+      <p>Estou aberto a novos desafios, colaborações e conversas sobre tecnologia.</p>
+      <a class="button button-light" href="mailto:marcelotorres1982@gmail.com">Iniciar uma conversa <span aria-hidden="true">↗</span></a>
+      <div class="contact-links"><a href="mailto:marcelotorres1982@gmail.com">E-mail</a><a href="https://www.linkedin.com/in/marcelo-t-alves" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/marcelotorres82" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div></section>
   </main>
 
-  <footer class="py-8 text-center bg-zinc-950 text-zinc-400 border-t border-zinc-800">
-    <p>&copy; 2025 Marcelo Torres. All rights reserved. Built with ❤️ and hosted on GitHub Pages.</p>
-  </footer>
-
-  <script>
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
-
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-    },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-  </script>
+  <footer class="footer"><div class="shell footer-inner"><p>© <span data-year></span> Marcelo Torres</p><a href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a></div></footer>
 </body>
 </html>
